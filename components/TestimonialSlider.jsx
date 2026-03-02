@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const Swiper = dynamic(
+  () => import("swiper/react").then((mod) => mod.Swiper),
+  { ssr: false }
+);
+
+const SwiperSlide = dynamic(
+  () => import("swiper/react").then((mod) => mod.SwiperSlide),
+  { ssr: false }
+);
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
-import { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
 
 import "swiper/css";
 import "swiper/css/navigation";

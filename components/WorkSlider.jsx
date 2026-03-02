@@ -1,8 +1,19 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Swiper = dynamic(
+  () => import("swiper/react").then((mod) => mod.Swiper),
+  { ssr: false }
+);
+
+const SwiperSlide = dynamic(
+  () => import("swiper/react").then((mod) => mod.SwiperSlide),
+  { ssr: false }
+);
 import { motion } from "framer-motion";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 
 import "swiper/css";
 import "swiper/css/pagination";

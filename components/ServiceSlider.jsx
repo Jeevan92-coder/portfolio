@@ -1,6 +1,17 @@
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const Swiper = dynamic(
+  () => import("swiper/react").then((mod) => mod.Swiper),
+  { ssr: false }
+);
+
+const SwiperSlide = dynamic(
+  () => import("swiper/react").then((mod) => mod.SwiperSlide),
+  { ssr: false }
+);
 import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import {
   RxCrop, RxPencil2, RxDesktop, RxReader, RxRocket, RxArrowTopRight,
 } from "react-icons/rx";
