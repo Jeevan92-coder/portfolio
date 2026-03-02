@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export const workSlides = [
   {
@@ -9,81 +13,32 @@ export const workSlides = [
     category: "Power BI Dashboard",
     tech: ["Power BI", "DAX", "Data Modeling"],
     description: "Multi-page Power BI dashboard with Welcome, Performance Insights & Academic Analysis pages. KPIs, bar charts, histograms aur trend visuals se business performance track kiya.",
-    color: "#F13024",
-    icon: "📊",
-    link: "#",
-    github: "https://github.com/Jeevan92-coder",
+    color: "#F13024", icon: "📊", link: "#", github: "https://github.com/Jeevan92-coder",
   },
   {
     title: "Professional Data Analytics Dashboard",
     category: "Power BI Dashboard",
     tech: ["Power BI", "DAX", "Customer Analytics"],
     description: "3-page professional dashboard — Welcome Page, Customer Overview & Customer Segmentation. Customer behavior, demographics aur segment-wise insights visualize kiye gaye hain.",
-    color: "#f59e0b",
-    icon: "📈",
-    link: "#",
-    github: "https://github.com/Jeevan92-coder",
+    color: "#f59e0b", icon: "📈", link: "#", github: "https://github.com/Jeevan92-coder",
   },
   {
     title: "Customer Segmentation",
     category: "Machine Learning",
     tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
     description: "K-Means clustering se 200 mall customers ko 5 segments mein divide kiya. Silhouette Score: 0.5547. Target, Standard, Careful, Careless & Sensible customers identify kiye.",
-    color: "#7c3aed",
-    icon: "🧠",
-    link: "#",
-    github: "https://github.com/Jeevan92-coder",
+    color: "#7c3aed", icon: "🧠", link: "#", github: "https://github.com/Jeevan92-coder",
   },
   {
     title: "User Management System",
     category: "Web Development",
     tech: ["Python", "Flask", "MySQL", "HTML/CSS/JS"],
     description: "Full-stack web app with login, register, dashboard & settings. Features: OTP email verification, profile picture upload, password hashing aur session management.",
-    color: "#10b981",
-    icon: "🔐",
-    link: "#",
-    github: "https://github.com/Jeevan92-coder",
+    color: "#10b981", icon: "🔐", link: "#", github: "https://github.com/Jeevan92-coder",
   },
 ];
 
 const WorkSlider = () => {
-  const [mounted, setMounted] = useState(false);
-  const [SwiperComp, setSwiperComp] = useState(null);
-  const [SwiperSlideComp, setSwiperSlideComp] = useState(null);
-  const [PaginationMod, setPaginationMod] = useState(null);
-
-  useEffect(() => {
-    Promise.all([
-      import("swiper/react"),
-      import("swiper/modules"),
-      import("swiper/css"),
-      import("swiper/css/pagination"),
-    ]).then(([swiperReact, swiperModules]) => {
-      setSwiperComp(() => swiperReact.Swiper);
-      setSwiperSlideComp(() => swiperReact.SwiperSlide);
-      setPaginationMod(() => swiperModules.Pagination);
-      setMounted(true);
-    });
-  }, []);
-
-  if (!mounted || !SwiperComp || !SwiperSlideComp) {
-    return (
-      <div className="h-[420px] xl:h-[480px] grid grid-cols-1 md:grid-cols-2 gap-4 pb-10">
-        {workSlides.slice(0, 2).map((_, i) => (
-          <div
-            key={i}
-            className="rounded-2xl animate-pulse"
-            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)" }}
-          />
-        ))}
-      </div>
-    );
-  }
-
-  const Swiper = SwiperComp;
-  const SwiperSlide = SwiperSlideComp;
-  const Pagination = PaginationMod;
-
   return (
     <Swiper
       spaceBetween={20}
@@ -104,27 +59,15 @@ const WorkSlider = () => {
             <div className="p-6 flex flex-col h-[calc(100%-4px)]">
               <div className="flex items-start justify-between mb-3">
                 <div>
-                  <span className="text-xs uppercase tracking-widest text-white/40 font-light">
-                    {project.category}
-                  </span>
-                  <h3 className="text-lg font-semibold mt-1 group-hover:text-accent transition-colors duration-300 leading-tight">
-                    {project.title}
-                  </h3>
+                  <span className="text-xs uppercase tracking-widest text-white/40 font-light">{project.category}</span>
+                  <h3 className="text-lg font-semibold mt-1 group-hover:text-accent transition-colors duration-300 leading-tight">{project.title}</h3>
                 </div>
                 <span className="text-3xl ml-2 flex-shrink-0">{project.icon}</span>
               </div>
-              <p className="text-xs text-white/50 leading-relaxed flex-1">
-                {project.description}
-              </p>
+              <p className="text-xs text-white/50 leading-relaxed flex-1">{project.description}</p>
               <div className="flex gap-2 flex-wrap mt-3 mb-4">
                 {project.tech.map((t, ti) => (
-                  <span
-                    key={ti}
-                    className="text-[10px] px-2 py-1 rounded-full text-white/60"
-                    style={{ border: "1px solid rgba(255,255,255,0.15)" }}
-                  >
-                    {t}
-                  </span>
+                  <span key={ti} className="text-[10px] px-2 py-1 rounded-full text-white/60" style={{ border: "1px solid rgba(255,255,255,0.15)" }}>{t}</span>
                 ))}
               </div>
               <div className="flex gap-3">
@@ -136,10 +79,8 @@ const WorkSlider = () => {
                 </Link>
               </div>
             </div>
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
-              style={{ background: `radial-gradient(circle at center, ${project.color}, transparent)` }}
-            />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
+              style={{ background: `radial-gradient(circle at center, ${project.color}, transparent)` }} />
           </motion.div>
         </SwiperSlide>
       ))}

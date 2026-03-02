@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import {
   RxCrop, RxPencil2, RxDesktop, RxReader, RxRocket, RxArrowTopRight,
 } from "react-icons/rx";
 import { MdOutlineWebhook } from "react-icons/md";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export const serviceData = [
   {
@@ -39,43 +43,6 @@ export const serviceData = [
 ];
 
 const ServiceSlider = () => {
-  const [mounted, setMounted] = useState(false);
-  const [SwiperComp, setSwiperComp] = useState(null);
-  const [SwiperSlideComp, setSwiperSlideComp] = useState(null);
-  const [PaginationMod, setPaginationMod] = useState(null);
-
-  useEffect(() => {
-    Promise.all([
-      import("swiper/react"),
-      import("swiper/modules"),
-      import("swiper/css"),
-      import("swiper/css/pagination"),
-    ]).then(([swiperReact, swiperModules]) => {
-      setSwiperComp(() => swiperReact.Swiper);
-      setSwiperSlideComp(() => swiperReact.SwiperSlide);
-      setPaginationMod(() => swiperModules.Pagination);
-      setMounted(true);
-    });
-  }, []);
-
-  if (!mounted || !SwiperComp || !SwiperSlideComp) {
-    return (
-      <div className="h-[300px] sm:h-[400px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-10">
-        {serviceData.slice(0, 3).map((item, i) => (
-          <div
-            key={i}
-            className="rounded-2xl px-6 py-8 animate-pulse"
-            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)" }}
-          />
-        ))}
-      </div>
-    );
-  }
-
-  const Swiper = SwiperComp;
-  const SwiperSlide = SwiperSlideComp;
-  const Pagination = PaginationMod;
-
   return (
     <Swiper
       breakpoints={{
@@ -98,16 +65,12 @@ const ServiceSlider = () => {
             }}
             className="h-[240px] sm:h-[340px] rounded-2xl px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer backdrop-blur-sm transition-all duration-300"
           >
-            <div className="text-4xl text-accent mb-4">
-              <item.Icon />
-            </div>
+            <div className="text-4xl text-accent mb-4"><item.Icon /></div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed text-white/50">
-                {item.description}
-              </p>
+              <p className="text-sm leading-relaxed text-white/50">{item.description}</p>
             </div>
             <div className="mt-4 text-2xl text-white/30 group-hover:text-accent transition-all duration-300 group-hover:rotate-45">
               <RxArrowTopRight />

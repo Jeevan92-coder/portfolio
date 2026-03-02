@@ -1,8 +1,13 @@
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
-import ServiceSlider from "../../components/ServiceSlider";
 import { fadeIn } from "../../variants";
+
+const ServiceSlider = dynamic(
+  () => import("../../components/ServiceSlider"),
+  { ssr: false }
+);
 
 const Services = () => {
   return (

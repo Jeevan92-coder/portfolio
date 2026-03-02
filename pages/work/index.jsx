@@ -1,8 +1,13 @@
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
-import WorkSlider from "../../components/WorkSlider";
 import { fadeIn } from "../../variants";
+
+const WorkSlider = dynamic(
+  () => import("../../components/WorkSlider"),
+  { ssr: false }
+);
 
 const Work = () => {
   return (
