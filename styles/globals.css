@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom Scrollbar ─── */
+:root {
+  --scrollbar-thumb: #F13024;
+  --scrollbar-track: #1a1a2e;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 9999px; }
+
+/* ─── Custom Cursor ─── */
+* { cursor: none !important; }
+#cursor-dot {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  width: 8px; height: 8px;
+  background: #F13024;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+#cursor-outline {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  width: 36px; height: 36px;
+  border: 1.5px solid rgba(241,48,36,0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.12s ease-out;
+}
+body:has(a:hover) #cursor-dot { width: 14px; height: 14px; }
+body:has(a:hover) #cursor-outline { width: 50px; height: 50px; border-color: rgba(241,48,36,1); }
+
+/* ─── Translate Z fix ─── */
+.translate-z-0 { transform: translateZ(0px); }
+
+/* ─── Swiper Bullets ─── */
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  background-color: #f13024;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  color: #f13024;
+  font-size: 18px !important;
+}
+
+/* ─── Base Styles ─── */
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-secondary overflow-x-hidden leading-relaxed;
+  }
+
+  .page {
+    @apply w-full h-screen overflow-hidden;
+  }
+
+  .h1 {
+    @apply text-[36px] leading-tight md:text-[62px] md:leading-[1.2] mb-8 font-bold;
+  }
+
+  .h2 {
+    @apply text-[32px] leading-tight md:text-[52px] md:leading-[1.2] mb-4 font-bold;
+  }
+
+  .h3 {
+    @apply text-[22px] font-semibold;
+  }
+
+  p {
+    @apply leading-[1.8] text-white/60 font-light;
+  }
+
+  .btn {
+    @apply h-[52px];
+  }
+
+  .input {
+    @apply w-full h-[52px] rounded-lg pl-6 bg-transparent outline-none
+      focus:ring-1 focus:ring-accent border border-white/20
+      placeholder:text-white/30 placeholder:font-light
+      text-white transition-all duration-300;
+  }
+
+  .textarea {
+    @apply w-full p-6 rounded-lg resize-none bg-transparent outline-none
+      focus:ring-1 focus:ring-accent border border-white/20
+      placeholder:text-white/30 placeholder:font-light
+      text-white transition-all duration-300;
+  }
+}
+
+/* ─── Noise Texture Overlay ─── */
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  z-index: 9997;
+}
+
+/* ─── Glow Line ─── */
+.glow-line {
+  background: linear-gradient(90deg, transparent, #F13024, transparent);
+  height: 1px;
+}
+
+/* ─── Text Gradient ─── */
+.text-gradient {
+  background: linear-gradient(135deg, #F13024, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glass Card ─── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Skill Bar ─── */
+.skill-bar-fill {
+  position: relative;
+  overflow: hidden;
+}
+.skill-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmerBar 2s infinite;
+}
+@keyframes shimmerBar {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
