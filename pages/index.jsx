@@ -1,15 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
-import { RiGithubLine, RiLinkedinLine, RiTwitterXLine, RiInstagramLine, RiFacebookLine } from "react-icons/ri";
 
-const socialData = [
-  { name: "GitHub",    link: "https://github.com/Jeevan92-coder",                                       Icon: RiGithubLine,   highlight: true },
-  { name: "LinkedIn",  link: "https://www.linkedin.com/in/meher-jeevan-3884b8388/",                     Icon: RiLinkedinLine },
-  { name: "Twitter",   link: "https://x.com/MeherJeeva77285",                                           Icon: RiTwitterXLine },
-  { name: "Instagram", link: "https://www.instagram.com/mrsh.akya92?igsh=MTE5OTN2aDRvcmc1bg==",         Icon: RiInstagramLine },
-  { name: "Facebook",  link: "https://www.facebook.com/share/1CMEdVCiqR/",                              Icon: RiFacebookLine },
-];
 
 // ── Particle Network ──────────────────────────────────────────────
 const ParticleNetwork = () => {
@@ -262,43 +254,6 @@ const Home = () => {
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 60% at 70% 50%, rgba(241,48,36,0.07), transparent 70%)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 40% 40% at 20% 60%, rgba(241,48,36,0.04), transparent 60%)", pointerEvents: "none" }} />
 
-        {/* Top Nav */}
-        <motion.header
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "22px 48px", backdropFilter: "blur(12px)", background: "rgba(6,6,16,0.6)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
-        >
-          <div style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 18, letterSpacing: 2 }}>
-            MEHER <span style={{ color: "#f13024" }}>•</span> JEEVAN
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            {socialData.map((s, i) => (
-              <SocialLink key={i} Icon={s.Icon} href={s.link} highlight={s.highlight} delay={0.2 + i * 0.1} />
-            ))}
-          </div>
-        </motion.header>
-
-        {/* Right Side Nav */}
-        <div style={{ position: "fixed", right: 24, top: "50%", transform: "translateY(-50%)", zIndex: 100, display: "flex", flexDirection: "column", gap: 8 }}>
-          {[
-            { icon: "⌂", active: true },
-            { icon: "◉", active: false },
-            { icon: "▦", active: false },
-            { icon: "≡", active: false },
-            { icon: "✉", active: false },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 + i * 0.08 }}
-              className={`nav-icon${item.active ? " active" : ""}`}
-            >
-              {item.icon}
-            </motion.div>
-          ))}
-        </div>
 
         {/* Main Content */}
         <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 48px", minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: 100 }}>
