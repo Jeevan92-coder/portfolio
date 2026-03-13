@@ -181,7 +181,7 @@ const Contact = () => {
                 {/* Message */}
                 <textarea
                   name="message"
-                  placeholder="Apna message likho..."
+                  placeholder="Type your message..."
                   required
                   value={formData.message}
                   onChange={handleChange}
@@ -210,7 +210,7 @@ const Contact = () => {
 
                 {/* EmailJS setup note */}
                 <p className="text-white/20 text-xs text-center">
-                  * EmailJS setup ke baad form live ho jayega
+                  
                 </p>
               </form>
             )}
