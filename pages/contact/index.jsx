@@ -84,8 +84,8 @@ const Contact = () => {
               Let&apos;s <span className="text-accent">connect.</span>
             </h2>
             <p className="text-white/60 text-sm leading-relaxed">
-              Koi project hai? Collaborate karna hai? Ya bas baat karni hai?
-              Form fill karo ya directly reach karo.
+              Have a project in mind? Want to collaborate? Or just want to connect?
+              Fill out the form or reach out directly
             </p>
 
             {contactInfo.map((item, i) => (
@@ -130,13 +130,13 @@ const Contact = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-white">Message Sent!</h3>
                 <p className="text-white/50 text-center max-w-xs">
-                  Thank you for reaching out. Main 24 hours mein reply karunga.
+                  Thank you for reaching out. I will respond within 24 hours.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="text-accent text-sm underline underline-offset-4"
                 >
-                  Aur ek message bhejo
+                  Message sent successfully. I’ll reply soon.
                 </button>
               </motion.div>
             ) : (
