@@ -251,11 +251,16 @@ const About = () => {
                       <div className="text-accent text-lg group-hover:scale-110 transition-transform duration-300">↗</div>
                     </a>
                   ) : (
-                    <div className="flex gap-x-4 items-start group">
-                      <div className="text-2xl flex-shrink-0 w-10 text-center">
-                        {item.stage}
+                    <div className="flex gap-x-6 items-center w-full group border-b border-white/5 pb-4">
+                      {/* Year Badge */}
+                      <div className="flex-shrink-0 text-center min-w-[80px]">
+                        <span className="text-xs font-bold text-accent tracking-widest px-3 py-1 rounded-full"
+                          style={{ background: "rgba(241,48,36,0.1)", border: "1px solid rgba(241,48,36,0.25)" }}>
+                          {item.stage}
+                        </span>
                       </div>
-                      <div className="flex-1 border-b border-white/5 pb-3">
+                      {/* Content */}
+                      <div className="flex-1">
                         <h4 className="text-sm font-semibold text-white group-hover:text-accent transition-colors duration-300">
                           {item.title}
                         </h4>
