@@ -13,28 +13,40 @@ export const workSlides = [
     category: "Power BI Dashboard",
     tech: ["Power BI", "DAX", "Data Modeling"],
     description: "Multi-page Power BI dashboard with Welcome, Performance Insights & Academic Analysis pages. KPIs, bar charts, histograms aur trend visuals se business performance track kiya.",
-    color: "#F13024", icon: "📊", link: "#", github: "https://github.com/Jeevan92-coder",
+    color: "#F13024",
+    icon: "📊",
+    link: "https://github.com/Jeevan92-coder/Business-Data-Analysis-Dashboard",
+    github: "https://github.com/Jeevan92-coder/Business-Data-Analysis-Dashboard",
   },
   {
     title: "Professional Data Analytics Dashboard",
     category: "Power BI Dashboard",
     tech: ["Power BI", "DAX", "Customer Analytics"],
     description: "3-page professional dashboard — Welcome Page, Customer Overview & Customer Segmentation. Customer behavior, demographics aur segment-wise insights visualize kiye gaye hain.",
-    color: "#f59e0b", icon: "📈", link: "#", github: "https://github.com/Jeevan92-coder",
+    color: "#f59e0b",
+    icon: "📈",
+    link: "https://github.com/Jeevan92-coder/professional-dashboard",
+    github: "https://github.com/Jeevan92-coder/professional-dashboard",
   },
   {
     title: "Customer Segmentation",
     category: "Machine Learning",
     tech: ["Python", "Scikit-learn", "Pandas", "Matplotlib"],
     description: "K-Means clustering se 200 mall customers ko 5 segments mein divide kiya. Silhouette Score: 0.5547. Target, Standard, Careful, Careless & Sensible customers identify kiye.",
-    color: "#7c3aed", icon: "🧠", link: "#", github: "https://github.com/Jeevan92-coder",
+    color: "#7c3aed",
+    icon: "🧠",
+    link: "https://github.com/Jeevan92-coder/Customer-Segmentation-using-Clustering-Python-",
+    github: "https://github.com/Jeevan92-coder/Customer-Segmentation-using-Clustering-Python-",
   },
   {
     title: "User Management System",
     category: "Web Development",
     tech: ["Python", "Flask", "MySQL", "HTML/CSS/JS"],
     description: "Full-stack web app with login, register, dashboard & settings. Features: OTP email verification, profile picture upload, password hashing aur session management.",
-    color: "#10b981", icon: "🔐", link: "#", github: "https://github.com/Jeevan92-coder",
+    color: "#10b981",
+    icon: "🔐",
+    link: "https://github.com/Jeevan92-coder/User-Registration-System-Login-System",
+    github: "https://github.com/Jeevan92-coder/User-Registration-System-Login-System",
   },
 ];
 
@@ -70,17 +82,29 @@ const WorkSlider = () => {
                   <span key={ti} className="text-[10px] px-2 py-1 rounded-full text-white/60" style={{ border: "1px solid rgba(255,255,255,0.15)" }}>{t}</span>
                 ))}
               </div>
-              <div className="flex gap-3">
-                <Link href={project.link} className="flex items-center gap-1 text-xs text-white/60 hover:text-accent transition-colors duration-300">
+              <div className="flex gap-4">
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs text-white/60 hover:text-accent transition-colors duration-300"
+                >
                   <BsArrowUpRight size={12} /> Live Demo
                 </Link>
-                <Link href={project.github} target="_blank" className="flex items-center gap-1 text-xs text-white/60 hover:text-white transition-colors duration-300">
-                  <BsGithub size={12} /> GitHub
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-xs text-white/60 hover:text-white transition-colors duration-300"
+                >
+                  <BsGithub size={12} /> View on GitHub
                 </Link>
               </div>
             </div>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
-              style={{ background: `radial-gradient(circle at center, ${project.color}, transparent)` }} />
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"
+              style={{ background: `radial-gradient(circle at center, ${project.color}, transparent)` }}
+            />
           </motion.div>
         </SwiperSlide>
       ))}
