@@ -15,7 +15,8 @@ export const workSlides = [
     description: "Multi-page Power BI dashboard with Welcome, Performance Insights & Academic Analysis pages. KPIs, bar charts, histograms aur trend visuals se business performance track kiya.",
     color: "#F13024",
     icon: "📊",
-    link: "https://github.com/Jeevan92-coder/Business-Data-Analysis-Dashboard",
+    link: "/Business Data Analysis Dashboard.zip",
+    download: true,
     github: "https://github.com/Jeevan92-coder/Business-Data-Analysis-Dashboard",
   },
   {
@@ -25,7 +26,8 @@ export const workSlides = [
     description: "3-page professional dashboard — Welcome Page, Customer Overview & Customer Segmentation. Customer behavior, demographics aur segment-wise insights visualize kiye gaye hain.",
     color: "#f59e0b",
     icon: "📈",
-    link: "https://github.com/Jeevan92-coder/professional-dashboard",
+    link: "/Professional Data Analytics Dashboard.zip",
+    download: true,
     github: "https://github.com/Jeevan92-coder/professional-dashboard",
   },
   {
@@ -35,7 +37,8 @@ export const workSlides = [
     description: "K-Means clustering se 200 mall customers ko 5 segments mein divide kiya. Silhouette Score: 0.5547. Target, Standard, Careful, Careless & Sensible customers identify kiye.",
     color: "#7c3aed",
     icon: "🧠",
-    link: "https://github.com/Jeevan92-coder/Customer-Segmentation-using-Clustering-Python-",
+    link: "/customer-segmentation.zip",
+    download: true,
     github: "https://github.com/Jeevan92-coder/Customer-Segmentation-using-Clustering-Python-",
   },
   {
@@ -55,7 +58,7 @@ export const workSlides = [
     description: "Bank customers ka churn predict karne ke liye ML model banaya. Data cleaning, EDA, aur classification algorithms se identify kiya ki kaun sa customer bank chhodne wala hai — business retention strategy mein help karta hai.",
     color: "#0ea5e9",
     icon: "🏦",
-    link: "https://bankchurn-beige.vercel.app/",
+    link: "https://github.com/Jeevan92-coder/BankChurnProject",
     github: "https://github.com/Jeevan92-coder/BankChurnProject",
   },
 
@@ -95,14 +98,24 @@ const WorkSlider = () => {
                 ))}
               </div>
               <div className="flex gap-4">
-                <Link
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-xs text-white/60 hover:text-accent transition-colors duration-300"
-                >
-                  <BsArrowUpRight size={12} /> Live Demo
-                </Link>
+                {project.download ? (
+                  <a
+                    href={project.link}
+                    download
+                    className="flex items-center gap-1 text-xs text-accent hover:text-white transition-colors duration-300"
+                  >
+                    <BsArrowUpRight size={12} /> Download Project ↓
+                  </a>
+                ) : (
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-xs text-white/60 hover:text-accent transition-colors duration-300"
+                  >
+                    <BsArrowUpRight size={12} /> Live Demo
+                  </Link>
+                )}
                 <Link
                   href={project.github}
                   target="_blank"
