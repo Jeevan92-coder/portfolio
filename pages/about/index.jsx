@@ -12,51 +12,51 @@ import { fadeIn } from "../../variants";
 
 // ── Certificate list ───────────────────────────────────────────────
 const certificates = [
-  "AI Fluency",
-  "Accessibility Fundamentals",
-  "Azure Architecture and Services",
-  "Azure Management and Governance",
-  "Build Web Pages with HTML and CSS for Beginners",
-  "Career Essentials in Cybersecurity (Course)",
-  "Career Essentials in Cybersecurity (Learning Path)",
-  "Career Essentials in Cybersecurity (LinkedIn)",
-  "Career Essentials in Software Development (Course)",
-  "Career Essentials in Software Development (Learning Path)",
-  "Career Essentials in Software Development (Oct 2025)",
-  "Collaborating with Microsoft Teams",
-  "Create Machine Learning Models",
-  "Cybersecurity Awareness & Terminology (1)",
-  "Cybersecurity Awareness & Terminology (2)",
-  "Cybersecurity Awareness & Terminology (3)",
-  "Cybersecurity Awareness & Terminology (4)",
-  "Cybersecurity Foundations (1)",
-  "Cybersecurity Foundations (2)",
-  "Cybersecurity Foundations (3)",
-  "Cybersecurity Foundations (4)",
-  "Design a Dream Destination with AI",
-  "Exploring Basic Computer Concepts",
-  "Get Started with Microsoft 365 Copilot",
-  "Get Started with Microsoft Data Analytics (Copy)",
-  "Get Started with Microsoft Data Analytics",
-  "Introduction to AI Skills for Nonprofits (EN-GB)",
-  "Introduction to AI Skills for Nonprofits",
-  "Introduction to Cloud Concepts",
-  "Learn the Basics of Web Accessibility",
-  "Microsoft Copilot for Productivity (Course)",
-  "Microsoft Copilot for Productivity (Learning Path)",
-  "Microsoft Security Copilot (Course)",
-  "Microsoft Security Copilot (Learning Path)",
-  "Prepare Data for Analysis with Power BI (2)",
-  "Prepare Data for Analysis with Power BI",
-  "Query and Modify Data with Transact-SQL",
-  "Remote Development with VS Code",
-  "Responsible Use of AI in Education",
-  "Strengthen Decision-Making with Generative AI (1)",
-  "Strengthen Decision-Making with Generative AI (2)",
-  "Strengthen Decision-Making with Generative AI (3)",
-  "The Cybersecurity Threat Landscape (1)",
-  "The Cybersecurity Threat Landscape (2)",
-  "Understand Data Concepts",
+  { name: "AI Fluency", file: "ai-fluency" },
+  { name: "Accessibility Fundamentals", file: "accessibility-fundamentals" },
+  { name: "Azure Architecture and Services", file: "azure-architecture-and-services" },
+  { name: "Azure Management and Governance", file: "azure-management-and-governance" },
+  { name: "Build Web Pages with HTML and CSS for Beginners", file: "build-web-pages-with-html-and-css-for-beginners" },
+  { name: "Career Essentials in Cybersecurity (Course)", file: "career-essentials-in-cybersecurity-course" },
+  { name: "Career Essentials in Cybersecurity (Learning Path)", file: "career-essentials-in-cybersecurity-learning-path" },
+  { name: "Career Essentials in Cybersecurity (LinkedIn)", file: "career-essentials-in-cybersecurity-linkedin" },
+  { name: "Career Essentials in Software Development (Course)", file: "career-essentials-in-software-development-course" },
+  { name: "Career Essentials in Software Development (Learning Path)", file: "career-essentials-in-software-development-learning-path" },
+  { name: "Career Essentials in Software Development (Oct 2025)", file: "career-essentials-in-software-development-oct-2025" },
+  { name: "Collaborating with Microsoft Teams", file: "collaborating-with-microsoft-teams" },
+  { name: "Create Machine Learning Models", file: "create-machine-learning-models" },
+  { name: "Cybersecurity Awareness & Terminology (1)", file: "cybersecurity-awareness-and-terminology-1" },
+  { name: "Cybersecurity Awareness & Terminology (2)", file: "cybersecurity-awareness-and-terminology-2" },
+  { name: "Cybersecurity Awareness & Terminology (3)", file: "cybersecurity-awareness-and-terminology-3" },
+  { name: "Cybersecurity Awareness & Terminology (4)", file: "cybersecurity-awareness-and-terminology-4" },
+  { name: "Cybersecurity Foundations (1)", file: "cybersecurity-foundations-1" },
+  { name: "Cybersecurity Foundations (2)", file: "cybersecurity-foundations-2" },
+  { name: "Cybersecurity Foundations (3)", file: "cybersecurity-foundations-3" },
+  { name: "Cybersecurity Foundations (4)", file: "cybersecurity-foundations-4" },
+  { name: "Design a Dream Destination with AI", file: "design-a-dream-destination-with-ai" },
+  { name: "Exploring Basic Computer Concepts", file: "exploring-basic-computer-concepts" },
+  { name: "Get Started with Microsoft 365 Copilot", file: "get-started-with-microsoft-365-copilot" },
+  { name: "Get Started with Microsoft Data Analytics (Copy)", file: "get-started-with-microsoft-data-analytics-copy" },
+  { name: "Get Started with Microsoft Data Analytics", file: "get-started-with-microsoft-data-analytics" },
+  { name: "Introduction to AI Skills for Nonprofits (EN-GB)", file: "introduction-to-ai-skills-for-nonprofits-en-gb" },
+  { name: "Introduction to AI Skills for Nonprofits", file: "introduction-to-ai-skills-for-nonprofits" },
+  { name: "Introduction to Cloud Concepts", file: "introduction-to-cloud-concepts" },
+  { name: "Learn the Basics of Web Accessibility", file: "learn-the-basics-of-web-accessibility" },
+  { name: "Microsoft Copilot for Productivity (Course)", file: "microsoft-copilot-for-productivity-course" },
+  { name: "Microsoft Copilot for Productivity (Learning Path)", file: "microsoft-copilot-for-productivity-learning-path" },
+  { name: "Microsoft Security Copilot (Course)", file: "microsoft-security-copilot-course" },
+  { name: "Microsoft Security Copilot (Learning Path)", file: "microsoft-security-copilot-learning-path" },
+  { name: "Prepare Data for Analysis with Power BI (2)", file: "prepare-data-for-analysis-with-power-bi-2" },
+  { name: "Prepare Data for Analysis with Power BI", file: "prepare-data-for-analysis-with-power-bi" },
+  { name: "Query and Modify Data with Transact-SQL", file: "query-and-modify-data-with-transact-sql" },
+  { name: "Remote Development with VS Code", file: "remote-development-with-vs-code" },
+  { name: "Responsible Use of AI in Education", file: "responsible-use-of-ai-in-education" },
+  { name: "Strengthen Decision-Making with Generative AI (1)", file: "strengthen-decision-making-with-generative-ai-1" },
+  { name: "Strengthen Decision-Making with Generative AI (2)", file: "strengthen-decision-making-with-generative-ai-2" },
+  { name: "Strengthen Decision-Making with Generative AI (3)", file: "strengthen-decision-making-with-generative-ai-3" },
+  { name: "The Cybersecurity Threat Landscape (1)", file: "the-cybersecurity-threat-landscape-1" },
+  { name: "The Cybersecurity Threat Landscape (2)", file: "the-cybersecurity-threat-landscape-2" },
+  { name: "Understand Data Concepts", file: "understand-data-concepts" },
 ];
 
 // ── Tabs data ──────────────────────────────────────────────────────
@@ -257,8 +257,8 @@ const About = () => {
                         >
                           <div className="relative w-full bg-white overflow-hidden" style={{ aspectRatio: "4/3" }}>
                             <Image
-                              src={`/certificates/${cert}.jpg`}
-                              alt={cert}
+                              src={`/certificates/${cert.file}.jpg`}
+                              alt={cert.name}
                               fill
                               className="object-cover group-hover:scale-105 transition-transform duration-500"
                               sizes="150px"
@@ -269,7 +269,7 @@ const About = () => {
                             </div>
                           </div>
                           <div className="px-2 py-1.5">
-                            <p className="text-[9px] text-white/60 leading-tight line-clamp-2 group-hover:text-accent transition-colors">{cert}</p>
+                            <p className="text-[9px] text-white/60 leading-tight line-clamp-2 group-hover:text-accent transition-colors">{cert.name}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -304,14 +304,14 @@ const About = () => {
                 <HiX size={18} />
               </button>
               <div className="relative w-full bg-white" style={{ aspectRatio: "4/3" }}>
-                <Image src={`/certificates/${lightbox}.jpg`} alt={lightbox} fill className="object-contain" sizes="700px" />
+                <Image src={`/certificates/${lightbox.file}.jpg`} alt={lightbox.name} fill className="object-contain" sizes="700px" />
               </div>
               <div className="flex items-center justify-between px-5 py-4" style={{ background: "rgba(10,10,18,0.97)" }}>
                 <div>
-                  <h3 className="text-sm font-semibold text-white">{lightbox}</h3>
+                  <h3 className="text-sm font-semibold text-white">{lightbox.name}</h3>
                   <p className="text-xs text-white/40 mt-0.5">Microsoft Learn</p>
                 </div>
-                <a href={`/certificates/${lightbox}.jpg`} download
+                <a href={`/certificates/${lightbox.file}.jpg`} download
                   onClick={(e) => e.stopPropagation()}
                   className="flex items-center gap-2 text-xs px-4 py-2 rounded-full text-white transition-all"
                   style={{ background: "rgba(241,48,36,0.85)" }}>
