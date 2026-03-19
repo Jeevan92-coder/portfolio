@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { FaPython, FaCode } from "react-icons/fa";
 import { SiMicrosoftoffice, SiMysql, SiPowerbi, SiTensorflow, SiScikitlearn } from "react-icons/si";
 import { HiX } from "react-icons/hi";
@@ -256,12 +255,10 @@ const About = () => {
                           style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}
                         >
                           <div className="relative w-full bg-white overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                            <Image
+                            <img
                               src={`/certificates/${cert.file}.jpg`}
                               alt={cert.name}
-                              fill
-                              className="object-cover group-hover:scale-105 transition-transform duration-500"
-                              sizes="150px"
+                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300 flex items-center justify-center">
                               <span className="opacity-0 group-hover:opacity-100 text-white text-[9px] px-2 py-0.5 rounded-full transition-all"
@@ -303,8 +300,8 @@ const About = () => {
                 style={{ background: "rgba(0,0,0,0.7)" }}>
                 <HiX size={18} />
               </button>
-              <div className="relative w-full bg-white" style={{ aspectRatio: "4/3" }}>
-                <Image src={`/certificates/${lightbox.file}.jpg`} alt={lightbox.name} fill className="object-contain" sizes="700px" />
+              <div className="w-full bg-white" style={{ aspectRatio: "4/3" }}>
+                <img src={`/certificates/${lightbox.file}.jpg`} alt={lightbox.name} className="w-full h-full object-contain" />
               </div>
               <div className="flex items-center justify-between px-5 py-4" style={{ background: "rgba(10,10,18,0.97)" }}>
                 <div>
