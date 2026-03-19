@@ -45,9 +45,21 @@ export const workSlides = [
     description: "Full-stack web app with login, register, dashboard & settings. Features: OTP email verification, profile picture upload, password hashing aur session management.",
     color: "#10b981",
     icon: "🔐",
-    link: "https://github.com/Jeevan92-coder/User-Registration-System-Login-System",
+    link: "https://professional-dashboard-muy1.onrender.com/register",
     github: "https://github.com/Jeevan92-coder/User-Registration-System-Login-System",
   },
+  {
+    title: "Bank Customer Churn Prediction",
+    category: "Machine Learning",
+    tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    description: "Bank customers ka churn predict karne ke liye ML model banaya. Data cleaning, EDA, aur classification algorithms se identify kiya ki kaun sa customer bank chhodne wala hai — business retention strategy mein help karta hai.",
+    color: "#0ea5e9",
+    icon: "🏦",
+    link: "https://github.com/Jeevan92-coder/BankChurnProject",
+    github: "https://github.com/Jeevan92-coder/BankChurnProject",
+  },
+
+
 ];
 
 const WorkSlider = () => {
