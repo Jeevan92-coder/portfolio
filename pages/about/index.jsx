@@ -43,19 +43,14 @@ const aboutData = [
     title: "Education",
     info: [
       {
-        title: "B.Tech – Computer Science",
-        stage: "2020 – 2024",
-        detail: "Swami Vivekanand College of Engineering, Indore (RGPV University)",
+        title: "10th Pass",
+        stage: "2020 – 2021",
+        detail: "From Orai, Uttar Pradesh",
       },
       {
-        title: "Higher Secondary (12th) – Science",
-        stage: "2019 – 2020",
-        detail: "MP Board — Focus on Mathematics & Physics",
-      },
-      {
-        title: "Secondary (10th)",
-        stage: "2017 – 2018",
-        detail: "MP Board",
+        title: "AIPA Course",
+        stage: "2025 – 2026",
+        detail: "From Kanpur, Uttar Pradesh",
       },
     ],
   },
