@@ -58,7 +58,7 @@ export const workSlides = [
     description: "Bank customers ka churn predict karne ke liye ML model banaya. Data cleaning, EDA, aur classification algorithms se identify kiya ki kaun sa customer bank chhodne wala hai — business retention strategy mein help karta hai.",
     color: "#0ea5e9",
     icon: "🏦",
-    link: "https://github.com/Jeevan92-coder/BankChurnProject",
+    link: "https://bankchurn-beige.vercel.app/",
     github: "https://github.com/Jeevan92-coder/BankChurnProject",
   },
 
