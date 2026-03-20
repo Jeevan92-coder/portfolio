@@ -84,8 +84,8 @@ const aboutData = [
   {
     title: "Education",
     info: [
-      { title: "10th Pass",    stage: "2020 – 2021", detail: "From Orai, Uttar Pradesh" },
-      { title: "AIPA Course",  stage: "2025 – 2026", detail: "From Kanpur, Uttar Pradesh" },
+      { title: "10th Pass",   stage: "2020 – 2021", detail: "S.R. Inter College, Orai, Uttar Pradesh" },
+      { title: "AIPA Course", stage: "2025 – 2026", detail: "NSTI Kanpur, Uttar Pradesh" },
     ],
   },
   {
